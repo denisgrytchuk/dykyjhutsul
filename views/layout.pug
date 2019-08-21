@@ -1,0 +1,64 @@
+doctype html
+html(lang= lang)
+    head
+        title Dykyj Hutsul
+        //link( rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        //link(rel='stylesheet' href='/css/style.css')
+        link(rel='stylesheet' href='/css/photo.css')
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+    body
+        .header
+            img(src='/img/main/logo1.png', style='width:100%')
+            .lang
+                div#uk Uk
+                div#en En
+                //div#pl Pl
+                //div#fr Fr
+
+        // Navigation Bar
+        .navbar
+            div
+                a(class="add_lang trans", href='/main/', key='main') Main
+            div(class='drop')
+                a(class='add_lang dropbtn trans' href='/events/' key='events') Events
+            div(class='drop')
+                a(class='add_lang dropbtn trans' href='/photo/', key='portrait') Portrait
+            div(class='drop')
+                a(class='add_lang dropbtn trans' href='/travel/', key='travel') Travel
+            //div(class='drop')
+                a(class='add_lang dropbtn trans' href='/video/' key='video') Video
+                    //.dropdown-content
+                        a(href='/photo') Кліпи
+                        a(href='/photo') Таймлапси
+                        a(href='/photo') Броли
+            //div
+                a(class="add_lang trans", href='/contact/' key='contact') Contact
+        .container
+              != messages('message', locals)
+              if errors
+                  each error, i in errors
+                    div(class="alert alert-danger") #{error.msg}
+
+              block content
+        .footer
+            .row
+                //.column
+                    a(href='https://www.linkedin.com/in/%D0%B4%D0%B5%D0%BD%D0%B8%D1%81-%D0%B3%D1%80%D0%B8%D1%82%D1%87%D1%83%D0%BA-a79294171/')
+                        img(src="/img/main/1.png", style='width:20%')
+                .column
+                    a(href='https://t.me/dykyjhutsul')
+                        img(src="/img/main/2.png", style='width:20%')
+                .column
+                    a(href='https://www.instagram.com/dykyjhutsul/')
+                        img(src="/img/main/3.png", style='width:20%')
+                .column
+                    a(href='https://www.facebook.com/dykyjhutsul1')
+                        img(src="/img/main/4.png", style='width:20%')
+        script(src='/bower_components/jquery/dist/jquery.min.js')
+        script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+        script(src='/js/main1.js')
+        //script(src='/js/photo.js')
+
+
+
+
